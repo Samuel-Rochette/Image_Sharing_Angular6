@@ -27,8 +27,10 @@ export class HeaderComponent implements OnInit {
       width: "250px"
     });
     dialogRef.afterClosed().subscribe(result => {
-      if (result === true) {
+      if (result === 1) {
         alert("registration successful!");
+      } else if (result === undefined || 2) {
+        return;
       } else {
         alert(result);
       }
@@ -40,8 +42,10 @@ export class HeaderComponent implements OnInit {
       width: "250px"
     });
     dialogRef.afterClosed().subscribe(result => {
-      if (result === true) {
+      if (result === 1) {
         this.loggedIn = true;
+      } else if (result === undefined || 2) {
+        return;
       } else {
         alert(result);
       }

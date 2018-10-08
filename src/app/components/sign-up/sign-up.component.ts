@@ -31,13 +31,13 @@ export class SignUpComponent implements OnInit {
   }
 
   onCancel() {
-    this.dialogRef.close();
+    this.dialogRef.close(2);
   }
 
   onSubmit() {
     this.userService.postUser(this.registerForm.value).subscribe(
       res => {
-        this.dialogRef.close(true);
+        this.dialogRef.close(1);
       },
       err => {
         this.dialogRef.close(err.message);

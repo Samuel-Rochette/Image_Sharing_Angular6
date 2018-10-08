@@ -1,9 +1,18 @@
-import { Injectable } from '@angular/core';
+import { Injectable } from "@angular/core";
+import { HttpClient, HttpHeaders } from "@angular/common/http";
+
+import { environment } from "../../../environments/environment";
+import { Image } from "./image";
 
 @Injectable({
-  providedIn: 'root'
+  providedIn: "root"
 })
 export class ImageService {
+  noAuthHeader = { headers: new HttpHeaders({ NoAuth: "True" }) };
 
-  constructor() { }
+  constructor(private http: HttpClient) {}
+
+  getRandom() {
+    return this.http.get<Image>(environment.apiBaseUrl + "image/random");
+  }
 }

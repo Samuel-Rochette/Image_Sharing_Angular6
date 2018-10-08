@@ -30,14 +30,14 @@ export class SignInComponent implements OnInit {
   }
 
   onCancel() {
-    this.dialogRef.close();
+    this.dialogRef.close(2);
   }
 
   onSubmit() {
     this.userService.login(this.loginForm.value).subscribe(
       res => {
         this.userService.setToken(res["token"]);
-        this.dialogRef.close(true);
+        this.dialogRef.close(1);
       },
       err => {
         this.dialogRef.close(err.message);
