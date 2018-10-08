@@ -1,3 +1,16 @@
-<p>
-  sign-up works!
-</p>
+<h1 mat-dialog-title>Sign Up</h1>
+<div mat-dialog-content>
+  <form novalidate [formGroup]="registerForm" (ngSubmit)="onSubmit()">
+    <mat-form-field class="full-width">
+      <input matInput formControlName="email" placeholder="Email" type="text">
+    </mat-form-field>
+    <mat-form-field class="full-width">
+      <input matInput formControlName="username" placeholder="Username" type="text">
+    </mat-form-field>
+    <mat-form-field class="full-width">
+      <input matInput formControlName="password" placeholder="Password" type="password">
+    </mat-form-field>
+    <button (click)="onCancel()" mat-button class="background-primary text-floral-white">Cancel</button>
+    <button type="submit" mat-button class="background-primary text-floral-white">Submit</button>
+  </form>
+</div>

@@ -11,11 +11,11 @@ export const appRoutes: Routes = [
     component: HomeComponent
   },
   {
-    path: "images/:gallery/:page",
+    path: "images/:gallery",
     component: GalleryComponent
   },
   {
-    path: "imagedetail/:id",
+    path: "imagedetail",
     component: ImageDetailComponent
   },
   {

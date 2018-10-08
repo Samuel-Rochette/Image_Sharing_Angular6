@@ -1,7 +1,8 @@
 import { BrowserModule } from "@angular/platform-browser";
 import { NgModule } from "@angular/core";
-import { FormsModule } from "@angular/forms";
+import { FormsModule, ReactiveFormsModule } from "@angular/forms";
 import { RouterModule } from "@angular/router";
+import { BrowserAnimationsModule } from "@angular/platform-browser/animations";
 import { HttpClientModule, HTTP_INTERCEPTORS } from "@angular/common/http";
 
 import { AppComponent } from "./app.component";
@@ -11,13 +12,20 @@ import { SignUpComponent } from "./components/sign-up/sign-up.component";
 import { GalleryComponent } from "./components/gallery/gallery.component";
 import { ImageDetailComponent } from "./components/image-detail/image-detail.component";
 import { HomeComponent } from "./components/home/home.component";
-import { ProfileComponent } from './components/profile/profile.component';
+import { ProfileComponent } from "./components/profile/profile.component";
 import { UserService } from "./shared/user/user.service";
 
 import { appRoutes } from "./routes";
 
 import { AuthGuard } from "./auth/auth.guard";
 import { AuthInterceptor } from "./auth/auth.interceptor";
+
+import {
+  MatDialogModule,
+  MatFormFieldModule,
+  MatInputModule,
+  MatButtonModule
+} from "@angular/material";
 
 @NgModule({
   declarations: [
@@ -34,16 +42,22 @@ import { AuthInterceptor } from "./auth/auth.interceptor";
     BrowserModule,
     FormsModule,
     RouterModule.forRoot(appRoutes),
-    HttpClientModule
+    HttpClientModule,
+    MatDialogModule,
+    BrowserAnimationsModule,
+    MatFormFieldModule,
+    MatInputModule,
+    ReactiveFormsModule,
+    MatButtonModule
   ],
   providers: [
-    // UserService,
-    // AuthGuard,
-    // {
-    //   provide: HTTP_INTERCEPTORS,
-    //   useClass: AuthInterceptor,
-    //   multi: true
-    // }
+    UserService,
+    AuthGuard,
+    {
+      provide: HTTP_INTERCEPTORS,
+      useClass: AuthInterceptor,
+      multi: true
+    }
   ],
   bootstrap: [
     AppComponent,

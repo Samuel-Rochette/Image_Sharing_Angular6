@@ -1,15 +1,47 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit } from "@angular/core";
+import { MatDialogRef, MAT_DIALOG_DATA } from "@angular/material";
+import { FormBuilder, FormGroup, Validators, NgForm } from "@angular/forms";
+
+import { UserService } from "../../shared/user/user.service";
 
 @Component({
-  selector: 'app-sign-in',
-  templateUrl: './sign-in.component.html',
-  styleUrls: ['./sign-in.component.css']
+  selector: "app-sign-in",
+  templateUrl: "./sign-in.component.html",
+  styleUrls: ["./sign-in.component.css"]
 })
 export class SignInComponent implements OnInit {
+  loginForm: FormGroup;
 
-  constructor() { }
-
-  ngOnInit() {
+  constructor(
+    public dialogRef: MatDialogRef<SignInComponent>,
+    private fb: FormBuilder,
+    private userService: UserService
+  ) {
+    this.createForm();
   }
 
+  ngOnInit() {}
+
+  createForm() {
+    this.loginForm = this.fb.group({
+      email: "",
+      password: ""
+    });
+  }
+
+  onCancel() {
+    this.dialogRef.close();
+  }
+
+  onSubmit() {
+    this.userService.login(this.loginForm.value).subscribe(
+      res => {
+        this.userService.setToken(res["token"]);
+        this.dialogRef.close(true);
+      },
+      err => {
+        this.dialogRef.close(err.message);
+      }
+    );
+  }
 }
