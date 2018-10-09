@@ -15,7 +15,7 @@ export const appRoutes: Routes = [
     component: GalleryComponent
   },
   {
-    path: "imagedetail",
+    path: "imagedetail/:id",
     component: ImageDetailComponent
   },
   {

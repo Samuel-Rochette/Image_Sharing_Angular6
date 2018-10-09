@@ -15,4 +15,18 @@ export class ImageService {
   getRandom() {
     return this.http.get<Image>(environment.apiBaseUrl + "image/random");
   }
+
+  getPage(page: number) {
+    return this.http.get<Image[]>(
+      environment.apiBaseUrl + "image/pages/" + page
+    );
+  }
+
+  getPageLength() {
+    return this.http.get<string>(environment.apiBaseUrl + "image/pagelength");
+  }
+
+  getOne(id: string) {
+    return this.http.get<Image>(environment.apiBaseUrl + "image/imagedetail/" + id);
+  }
 }

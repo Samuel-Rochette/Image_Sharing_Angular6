@@ -1,3 +1,19 @@
-<p>
-  image-detail works!
-</p>
+<div class="center-page">
+  <h2>
+    {{image.name}}
+  </h2>
+  <p class="author">Uploaded by {{image.uploadedby}}</p>
+  <img width="100%" src="{{BaseURL}}/img/{{image.path}}">
+  <p>{{image.description}}</p>
+</div>
+<div class="center-page">
+  <h3>Comments {{image.comments.length}}</h3>
+  <mat-list role="list">
+    <mat-list-item class="comment" role="listitem" *ngFor="let comment of image.comments">
+      <div class="row">
+        <p class="thick col">{{comment.author}}</p>
+        <p class="col">{{comment.message}}</p>
+      </div>
+    </mat-list-item>
+  </mat-list>
+</div>

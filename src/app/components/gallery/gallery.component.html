@@ -1,3 +1,14 @@
-<p>
-  gallery works!
-</p>
+<mat-paginator [length]="pageLength"
+              [pageSize]="9"
+              (page)="pageEvent = onChangePage($event)">
+</mat-paginator>
+<mat-grid-list cols="3">
+  <mat-grid-tile *ngFor="let image of images">
+      <mat-card (click)="onSelect(image._id)">
+        <mat-card-title>
+          {{image.name}}
+        </mat-card-title>
+        <img width="100%" src="{{BaseURL}}/img/{{image.path}}">
+      </mat-card>
+  </mat-grid-tile>
+</mat-grid-list>

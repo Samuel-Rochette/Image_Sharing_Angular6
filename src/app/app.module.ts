@@ -26,7 +26,10 @@ import {
   MatFormFieldModule,
   MatInputModule,
   MatButtonModule,
-  MatCardModule
+  MatCardModule,
+  MatGridListModule,
+  MatPaginatorModule,
+  MatListModule
 } from "@angular/material";
 
 @NgModule({
@@ -51,7 +54,10 @@ import {
     MatInputModule,
     ReactiveFormsModule,
     MatButtonModule,
-    MatCardModule
+    MatCardModule,
+    MatGridListModule,
+    MatPaginatorModule,
+    MatListModule
   ],
   providers: [
     UserService,
