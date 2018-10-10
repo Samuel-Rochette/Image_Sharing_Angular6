@@ -52,7 +52,7 @@ export class HeaderComponent implements OnInit {
     });
   }
 
-  logOut() {
+  logout() {
     this.userService.deleteToken();
     this.loggedIn = false;
   }

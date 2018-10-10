@@ -1,3 +1,17 @@
-<p>
-  profile works!
-</p>
+<table *ngIf="user" class="table-fill">
+  <thead>
+    <tr>
+      <th colspan="2" class="text-center">User Profile</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Username</td>
+      <td>{{user.username}}</td>
+    </tr>
+    <tr>
+      <td>Email</td>
+      <td>{{user.email}}</td>
+    </tr>
+  </tbody>
+</table>

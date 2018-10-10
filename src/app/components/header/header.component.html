@@ -12,7 +12,18 @@
       <li><a (click)="openSignIn()"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
     </ul>
     <ul *ngIf="loggedIn" class="nav navbar-nav navbar-right">
-      <li><a (click)="logOut()">Logout</a></li>
+      <li>
+        <a data-toggle="dropdown">
+        <span class="glyphicon glyphicon-user"></span>
+        Profile
+        <span class="caret"></span></a>
+        <ul class="dropdown-menu">
+          <li><a href="profile">Account</a></li>
+          <li><a href="#">Favorites</a></li>
+          <li><a href="#">Uploads</a></li>
+          <li><a (click)="logout()">Logout</a></li>
+        </ul>
+      </li>
     </ul>
   </div>
 </nav>
