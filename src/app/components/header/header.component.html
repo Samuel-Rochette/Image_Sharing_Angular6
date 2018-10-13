@@ -19,9 +19,10 @@
         <span class="caret"></span></a>
         <ul class="dropdown-menu">
           <li><a href="profile">Account</a></li>
-          <li><a href="#">Favorites</a></li>
-          <li><a href="#">Uploads</a></li>
-          <li><a (click)="logout()">Logout</a></li>
+          <li><a href="favorites">Favorites</a></li>
+          <li><a href="myimages">My Images</a></li>
+          <li><a (click)="openUploadDialogue()">Upload</a>
+          <li><a href="home"(click)="logout()">Logout</a></li>
         </ul>
       </li>
     </ul>

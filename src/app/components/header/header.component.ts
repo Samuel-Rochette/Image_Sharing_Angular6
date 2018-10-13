@@ -5,6 +5,7 @@ import { UserService } from "../../shared/user/user.service";
 
 import { SignInComponent } from "../sign-in/sign-in.component";
 import { SignUpComponent } from "../sign-up/sign-up.component";
+import { UploadComponent } from "../upload/upload.component";
 
 @Component({
   selector: "app-header",
@@ -49,6 +50,12 @@ export class HeaderComponent implements OnInit {
       } else {
         alert(result);
       }
+    });
+  }
+
+  openUploadDialogue() {
+    let dialogRef = this.dialog.open(UploadComponent, {
+      width: "300px"
     });
   }
 

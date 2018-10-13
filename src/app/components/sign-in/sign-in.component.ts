@@ -1,7 +1,6 @@
 import { Component, OnInit } from "@angular/core";
 import { MatDialogRef, MAT_DIALOG_DATA } from "@angular/material";
 import { FormBuilder, FormGroup, Validators, NgForm } from "@angular/forms";
-
 import { UserService } from "../../shared/user/user.service";
 
 @Component({
@@ -24,8 +23,8 @@ export class SignInComponent implements OnInit {
 
   createForm() {
     this.loginForm = this.fb.group({
-      email: "",
-      password: ""
+      email: ["", Validators.required],
+      password: ["", Validators.required]
     });
   }
 

@@ -1,0 +1,14 @@
+<h1 mat-dialog-title>Upload Image</h1>
+<div mat-dialog-content>
+  <form novalidate [formGroup]="uploadForm" (ngSubmit)="onSubmit()">
+    <mat-form-field class="full-width">
+      <input matInput formControlName="name" placeholder="Name" type="text">
+    </mat-form-field>
+    <mat-form-field class="full-width">
+      <textarea matInput formControlName="description" placeholder="Description" type="text"></textarea>
+    </mat-form-field>
+    <input name="image" type="file" (change)="onFileChange($event)">
+    <button (click)="onCancel()" mat-button class="background-primary text-floral-white">Cancel</button>
+    <button type="submit" [disabled]="uploadForm.invalid" mat-button class="background-primary text-floral-white">Submit</button>
+  </form>
+</div>

@@ -7,6 +7,9 @@
   <p>{{image.description}}</p>
 </div>
 <div class="center-page">
+  <p align="right">
+    <button (click)="saveSelected(image._id)" mat-button>Save</button>
+  </p>
   <h3>Comments {{image.comments.length}}</h3>
   <mat-list role="list">
     <mat-list-item class="comment" role="listitem" *ngFor="let comment of image.comments">
@@ -16,4 +19,10 @@
       </div>
     </mat-list-item>
   </mat-list>
+  <form novalidate *ngIf="loggedIn" [formGroup]="commentForm" (ngSubmit)="onSubmit(image._id)">
+    <mat-form-field>
+      <textarea matInput formControlName="message" placeholder="Comment" type="text"></textarea>
+    </mat-form-field>
+    <button type="submit" [disabled]="commentForm.invalid" mat-button class="background-primary text-floral-white">Submit Comment</button>
+  </form>
 </div>

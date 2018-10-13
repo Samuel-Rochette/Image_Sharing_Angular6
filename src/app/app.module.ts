@@ -14,12 +14,14 @@ import { GalleryComponent } from "./components/gallery/gallery.component";
 import { ImageDetailComponent } from "./components/image-detail/image-detail.component";
 import { HomeComponent } from "./components/home/home.component";
 import { ProfileComponent } from "./components/profile/profile.component";
-import { UserService } from "./shared/user/user.service";
+import { UploadComponent } from "./components/upload/upload.component";
+import { PrivateGalleryComponent } from "./components/private-gallery/private-gallery.component";
 
 import { appRoutes } from "./routes";
 
 import { AuthGuard } from "./auth/auth.guard";
 import { AuthInterceptor } from "./auth/auth.interceptor";
+import { UserService } from "./shared/user/user.service";
 
 import {
   MatDialogModule,
@@ -41,7 +43,9 @@ import {
     GalleryComponent,
     ImageDetailComponent,
     HomeComponent,
-    ProfileComponent
+    ProfileComponent,
+    UploadComponent,
+    PrivateGalleryComponent
   ],
   imports: [
     BrowserModule,
@@ -77,7 +81,9 @@ import {
     GalleryComponent,
     ImageDetailComponent,
     HomeComponent,
-    ProfileComponent
+    ProfileComponent,
+    UploadComponent,
+    PrivateGalleryComponent
   ]
 })
 export class AppModule {}

@@ -11,6 +11,6 @@
       <input matInput formControlName="password" placeholder="Password" type="password">
     </mat-form-field>
     <button (click)="onCancel()" mat-button class="background-primary text-floral-white">Cancel</button>
-    <button type="submit" mat-button class="background-primary text-floral-white">Submit</button>
+    <button type="submit" [disabled]="registerForm.invalid" mat-button class="background-primary text-floral-white">Submit</button>
   </form>
 </div>

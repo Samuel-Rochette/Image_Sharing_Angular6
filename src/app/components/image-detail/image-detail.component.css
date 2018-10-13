@@ -2,6 +2,15 @@ img {
   margin-bottom: 15px;
 }
 
+button {
+  background-color: #4fc7ff;
+}
+
+mat-form-field {
+  margin-right: 30px;
+  margin-bottom: 30px;
+}
+
 .center-page {
   max-width: 80%;
   margin-left: auto;

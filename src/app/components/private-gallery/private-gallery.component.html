@@ -1,7 +1,3 @@
-<mat-paginator [length]="pageLength"
-              [pageSize]="9"
-              (page)="pageEvent = onChangePage($event)">
-</mat-paginator>
 <mat-grid-list cols="3">
   <mat-grid-tile *ngFor="let image of images">
       <mat-card>
@@ -9,6 +5,8 @@
           {{image.name}}
         </mat-card-title>
         <img (click)="onSelect(image._id)" width="100%" src="{{BaseURL}}/img/{{image.path}}">
+        <button mat-button (click)="removeFavorite(image._id)" *ngIf="isFavorite">Remove</button>
+        <button mat-button (click)="deleteImage(image._id)" *ngIf="!isFavorite">Delete</button>
       </mat-card>
   </mat-grid-tile>
 </mat-grid-list>
