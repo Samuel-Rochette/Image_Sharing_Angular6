@@ -1,6 +1,6 @@
 # Image Sharing App Angular 6
 
-This is a sample front end web applications which allows users to upload and share images in a public gallery. This project was made using Angular version 6. The purpose of this program was to refine my understanding of authorization, and to learn how to make scalable web applications which serve static files from the back end server.
+This is a sample front end web application which allows users to upload and share images in a public gallery. This project was made using Angular version 6. The purpose of this program was to refine my understanding of authorization, and to learn how to make scalable web applications which serve static files from the back end server.
 
 ### Features
 
